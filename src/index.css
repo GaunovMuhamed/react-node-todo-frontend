@@ -1,0 +1,184 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-size: 100% 100%;
+
+}
+
+.main-container {
+  margin: 0 auto;
+  width: 40%;
+  position: relative;
+  padding-top: 4%;
+}
+
+.main-text {
+  text-align: center;
+  font-size: 70px;
+  color: #F5CBEDcc;
+}
+
+.add-todo-form,
+.search-todo-form {
+  background-color: #ffffff;
+  margin: 20px auto;
+  display: flex;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 5px;
+  border: solid #F5CBEDcc 0.2px;
+}
+
+.input-area {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.input-button {
+  background-color: #ffffff;
+  background-image: url("./images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 30px;
+  transform: rotate(180deg);
+}
+
+.input-field {
+  border: none;
+  width: 100%;
+  text-indent: 6px;
+  outline: none;
+}
+
+.input-field::placeholder {
+  font-style: oblique;
+}
+
+.new-todo,
+.new-todo-done {
+  background-color: #ffffff;
+  display: flex;
+  margin-top: 0.2px;
+  border: solid #F5CBEDcc 0.2px;
+}
+
+.new-todo-done {
+  text-decoration: line-through;
+  color: #7E7E7E;
+}
+
+.new-todo:hover .delete-button {
+  opacity: 1;
+  transition: 1s;
+}
+
+.new-todo-done:hover .delete-button {
+  opacity: 1;
+  transition: 1s;
+}
+
+.hide-todo {
+  display: none;
+}
+
+.todo-checkbox {
+  width: 22px;
+}
+
+.todo-text,
+.changed-todo-text {
+  width: 100%;
+  padding: 8px;
+}
+
+.changed-todo-text {
+  text-decoration: line-through;
+  color: #7E7E7E;
+}
+
+.delete-button {
+  background-image: url("./images/cross.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  width: 15px;
+  height: 15px;
+  margin: auto auto;
+  padding: 8px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.todo-list {
+  max-height: 198px;
+  overflow-y: auto;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.bottom-menu {
+  background-color: #ffffff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border: solid #F5CBEDcc 0.2px;
+  display: flex;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 6px;
+  color: #7E7E7E;
+}
+
+.all-button,
+.active-button,
+.completed-button,
+.clear-completed,
+.items-count {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 10px;
+  border: solid transparent 2px;
+}
+
+.all-button:hover,
+.active-button:hover,
+.completed-button:hover {
+  border: solid #ffd89b 2px;
+  border-radius: 4px;
+}
+
+.checkbox {
+  z-index: -9999;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+
+.custom-checkbox {
+  border-radius: 100%;
+  border: solid #c9c9c9 0.8px;
+  min-width: 20px;
+  min-height: 20px;
+  margin: auto 8px;
+}
+
+.checkbox:checked+.custom-checkbox {
+  background-image: url("./images/tick.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.todo-container {
+  display: flex;
+  width: 100%;
+}
+
+.new-todo-done:checked {}
