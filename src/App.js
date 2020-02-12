@@ -18,9 +18,7 @@ const App = () => {
 
   async function getDataFromDB() {
     const response = await axios.get("http://localhost:5000");
-    console.log(response.data)
     setTodos(response.data)
-
   }
 
   useEffect(() => {
@@ -35,9 +33,9 @@ const App = () => {
 
 
   async function addTodo(textTodo) {
+
     if (textTodo.trim()) {
       const newTodo = { id: Math.random(), content: textTodo, status: false }
-      //setTodos([...todos, newTodo])
       try {
         await axios.post('http://localhost:5000', newTodo);
         getDataFromDB();
@@ -55,7 +53,6 @@ const App = () => {
     try {
       await axios.delete('http://localhost:5000/' + idToDelete)
       getDataFromDB()
-      //setTodos([...newTodos]);
     }
     catch (error) {
       console.log("Error: " + error)
@@ -74,7 +71,6 @@ const App = () => {
     target.checked = !status;
     setTodos([...newTodos]);
 
-    ///back
     async function sendChangedTodo(id, todo) {
       const [todoToChange] = [...todos.filter(todo => todo.id === id)]
       try {
