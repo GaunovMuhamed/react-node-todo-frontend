@@ -17,7 +17,7 @@ const App = () => {
   let [showFilteredTodos, setShowFiltered] = useState('all')
 
   async function getDataFromDB() {
-    const response = await axios.get("http://localhost:5000");
+    const response = await axios.get("http://react-node-todos-backend.herokuapp.com");
     setTodos(response.data)
   }
 
@@ -37,7 +37,7 @@ const App = () => {
     if (textTodo.trim()) {
       const newTodo = { id: Math.random(), content: textTodo, status: false }
       try {
-        await axios.post('http://localhost:5000', newTodo);
+        await axios.post('http://react-node-todos-backend.herokuapp.com', newTodo);
         getDataFromDB();
       }
       catch (error) {
@@ -51,7 +51,7 @@ const App = () => {
     const idToDelete = [...todos.filter(todo => todo.id === id)][0]._id;
 
     try {
-      await axios.delete('http://localhost:5000/' + idToDelete)
+      await axios.delete('http://react-node-todos-backend.herokuapp.com/' + idToDelete)
       getDataFromDB()
     }
     catch (error) {
@@ -74,7 +74,7 @@ const App = () => {
     async function sendChangedTodo(id, todo) {
       const [todoToChange] = [...todos.filter(todo => todo.id === id)]
       try {
-        await axios.put('http://localhost:5000/' + todoToChange._id)
+        await axios.put('http://react-node-todos-backend.herokuapp.com/' + todoToChange._id)
         getDataFromDB()
 
       }
